@@ -3,7 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>404 - Page Not Found | Royal Dreams</title>
+    <title>404 - Page Not Found | Cloud Decode</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FF9900'><path d='M18.75 12.38c-.18-.13-.4-.2-.62-.2-.22 0-.44.07-.62.2l-4.51 3.26-4.51-3.26c-.18-.13-.4-.2-.62-.2s-.44.07-.62.2c-.37.27-.46.79-.19 1.16l5.33 7.67c.14.21.38.33.61.33s.47-.12.61-.33l5.33-7.67c.27-.37.18-.89-.19-1.16z'/><path d='M5.25 11.62c.18.13.4.2.62.2.22 0 .44-.07.62-.2l4.51-3.26 4.51 3.26c.18.13.4.2.62.2s.44-.07.62-.2c.37-.27.46-.79.19-1.16L12.61 2.79c-.14-.21-.38-.33-.61-.33s-.47.12-.61.33L6.06 10.46c-.27.37-.18.89.19 1.16z'/></svg>"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FF9900'><path d='M18.75 12.38c-.18-.13-.4-.2-.62-.2-.22 0-.44.07-.62.2l-4.51 3.26-4.51-3.26c-.18-.13-.4-.2-.62-.2s-.44.07-.62.2c-.37.27-.46.79-.19 1.16l5.33 7.67c.14.21.38.33.61.33s.47-.12.61-.33l5.33-7.67c.27-.37.18-.89-.19 1.16z'/><path d='M5.25 11.62c.18.13.4.2.62.2.22 0 .44-.07.62-.2l4.51-3.26 4.51 3.26c.18.13.4.2.62.2s.44-.07.62-.2c.37-.27.46-.79.19-1.16L12.61 2.79c-.14-.21-.38-.33-.61-.33s-.47.12-.61.33L6.06 10.46c-.27.37-.18.89.19 1.16z'/></svg>"
+    />
     <link rel="stylesheet" href="style/style.css" />
     <link
       rel="stylesheet"
@@ -13,26 +22,27 @@
   <body>
     <!-- background effects -->
     <div class="background-effects">
-      <div class="smoke-effect"></div>
-      <div class="engine-glow"></div>
+      <div class="cloud-particles"></div>
+      <div class="aws-glow"></div>
     </div>
 
     <!-- Error Page Content -->
     <div class="error-container">
       <div class="error-content">
-        <div class="error-bike">
-          <i class="fas fa-motorcycle"></i>
+        <div class="error-cloud">
+          <i class="fas fa-cloud-exclamation-triangle"></i>
         </div>
         <h1 class="error-code">404</h1>
-        <h2 class="error-title">Road Not Found</h2>
+        <h2 class="error-title">Endpoint Not Found</h2>
         <p class="error-message">
-          Looks like you've taken a wrong turn on the highway of dreams. The
-          road you're looking for doesn't exist in our royal kingdom.
+          Looks like you've reached a non-existent endpoint in our cloud
+          infrastructure. The resource you're looking for doesn't exist in our
+          AWS ecosystem.
         </p>
         <div class="error-actions">
           <a href="index.html" class="btn-primary">
             <i class="fas fa-home"></i>
-            Return Home
+            Return to Dashboard
           </a>
           <button onclick="history.back()" class="btn-secondary">
             <i class="fas fa-arrow-left"></i>
@@ -42,9 +52,10 @@
         <div class="error-quote">
           <i class="fas fa-quote-left"></i>
           <p>
-            "Not all who wander are lost, but some definitely take wrong turns."
+            "In the cloud, every failure is a learning opportunity to build
+            better architecture."
           </p>
-          <span>- Royal Dreams Philosophy</span>
+          <span>- Cloud Decode Philosophy</span>
         </div>
       </div>
     </div>
@@ -66,14 +77,14 @@
         animation: slideInUp 1s ease-out;
       }
 
-      .error-bike {
+      .error-cloud {
         margin-bottom: 2rem;
       }
 
-      .error-bike i {
+      .error-cloud i {
         font-size: 6rem;
-        color: var(--royal-gold);
-        filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.5));
+        color: var(--aws-orange);
+        filter: drop-shadow(0 0 20px rgba(255, 153, 0, 0.5));
         animation: bounce 2s infinite;
       }
 
@@ -81,10 +92,10 @@
         font-family: var(--font-heading);
         font-size: clamp(4rem, 12vw, 8rem);
         font-weight: 700;
-        color: var(--royal-gold);
+        color: var(--aws-orange);
         margin-bottom: 1rem;
-        text-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
-        background: var(--gradient-royal);
+        text-shadow: 0 0 30px rgba(255, 153, 0, 0.3);
+        background: var(--gradient-aws);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -113,7 +124,7 @@
       }
 
       .error-quote {
-        background: rgba(212, 175, 55, 0.1);
+        background: rgba(255, 153, 0, 0.1);
         border: 1px solid var(--border-primary);
         border-radius: 12px;
         padding: 2rem;
@@ -125,7 +136,7 @@
         top: 1rem;
         left: 1rem;
         font-size: 1.5rem;
-        color: var(--royal-gold);
+        color: var(--aws-orange);
         opacity: 0.5;
       }
 
@@ -139,7 +150,7 @@
 
       .error-quote span {
         font-size: 0.9rem;
-        color: var(--royal-gold);
+        color: var(--aws-orange);
         font-weight: 600;
       }
 
