@@ -1,11 +1,11 @@
-name: CI/CD Pipeline
+name: CI/CD for Ankit Pokhrel
 
-on: 
+on:
   push:
     branches:
       - main
 
-jobs: 
+jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
@@ -13,27 +13,12 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Configure AWS
-        uses: aws-actions/configure-aws-credentials@v2
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1-node16
         with:
-          aws-access-key-id: ${{AWS_ACCESS_KEY_ID}}
-          aws-secret-access-key: ${{AWS_SECRET_ACCESS_KEY}}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      # - name: Set up Node.js
-      #   uses: actions/setup-node@v3
-      #   with:
-      #     node-version: '16'
-
-      # - name: Install Dependencies
-      #   run: npm install
-
-      # - name: Run Tests
-      #   run: npm test
-
-      # - name: Build Project
-      #   run: npm run build
-
-      - name: Deploy to s3
-        if: success()
-        run: aws s3 sync ./build s3://awswithdevcom.pokhrelankit.com.np --delete
+      - name: Deploy Static Site to S3 Bucket
+        run: aws s3 sync . s3://awswithdevcom.pokhrelankit.com.np --delete
